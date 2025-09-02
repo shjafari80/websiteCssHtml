@@ -288,3 +288,113 @@ h1, h2, h3 {
     background: rgba(139, 92, 246, 0.1);
     border-color: rgba(139, 92, 246, 0.8);
 }
+
+/* ===== Print Styles ===== */
+@media print {
+    .site-header, .site-footer, .theme-toggle {
+        display: none;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .card {
+        border: 1px solid #ccc;
+        box-shadow: none;
+    }
+    
+    .btn, .btn-ghost {
+        border: 1px solid #ccc;
+        background: white !important;
+        color: black !important;
+    }
+}
+
+/* ===== Responsive Nightsky Theme ===== */
+@media (max-width: 800px) {
+    [data-theme="nightsky"] body::before {
+        background-size: 150px 75px;
+        animation-duration: 15s;
+    }
+    
+    [data-theme="nightsky"] .card {
+        backdrop-filter: blur(8px);
+    }
+    
+    [data-theme="nightsky"] .site-header,
+    [data-theme="nightsky"] .site-footer {
+        backdrop-filter: blur(12px);
+    }
+}
+
+@media (max-width: 600px) {
+    [data-theme="nightsky"] body::before {
+        background-size: 120px 60px;
+        animation-duration: 12s;
+    }
+    
+    [data-theme="nightsky"] .card {
+        backdrop-filter: blur(6px);
+        box-shadow: 0 6px 24px rgba(139, 92, 246, 0.08);
+    }
+    
+    [data-theme="nightsky"] .card:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 28px rgba(139, 92, 246, 0.15);
+    }
+}
+
+@media (max-width: 480px) {
+    [data-theme="nightsky"] body::before {
+        background-size: 100px 50px;
+        animation-duration: 10s;
+    }
+    
+    [data-theme="nightsky"] .card {
+        backdrop-filter: blur(4px);
+    }
+    
+    [data-theme="nightsky"] .btn {
+        box-shadow: 0 3px 12px rgba(139, 92, 246, 0.25);
+    }
+    
+    [data-theme="nightsky"] .btn:hover {
+        box-shadow: 0 4px 16px rgba(139, 92, 246, 0.35);
+    }
+}
+
+/* ===== Touch Device Optimizations ===== */
+@media (hover: none) and (pointer: coarse) {
+    [data-theme="nightsky"] .card:hover {
+        transform: none;
+    }
+    
+    [data-theme="nightsky"] .btn:hover {
+        transform: none;
+    }
+    
+    .card:hover {
+        transform: none;
+    }
+    
+    .btn:hover {
+        transform: none;
+    }
+    
+    /* Increase touch targets */
+    .nav a, .btn, .btn-ghost, .icon-btn {
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .logo {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+}
