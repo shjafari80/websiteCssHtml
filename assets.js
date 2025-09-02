@@ -30,7 +30,7 @@ if (themeToggle) {
     });
     
     // بارگذاری تم ذخیره شده
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    const savedTheme = localStorage.getItem('theme') || 'nightsky';
     document.documentElement.setAttribute('data-theme', savedTheme);
     
     // تنظیم آیکون مناسب
