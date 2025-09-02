@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ثبت‌نام | کامپیوتر هاب</title>
+<link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<a class="logo" href="/">کامپیوتر هاب</a>
+<nav class="nav">
+<a href="/">خانه</a>
+<a href="/account/login.html">ورود</a>
+<button class="icon-btn theme-toggle" id="themeToggle">🌓</button>
+</nav>
+</div>
+</header>
+
+
+<main class="container narrow">
+<h1>ایجاد حساب</h1>
+<form id="registerForm" class="form" novalidate>
+<label>نام و نام خانوادگی</label>
+<input type="text" name="name" required minlength="2" />
+
+
+<label>ایمیل</label>
+<input type="email" name="email" required />
+
+
+<label>رمز عبور</label>
+<div class="password-field">
+<input type="password" name="password" required minlength="8" />
+<button class="icon-btn" type="button" data-toggle="password">👁️</button>
+</div>
+
+
+<label>تکرار رمز عبور</label>
+<input type="password" name="confirm" required minlength="8" />
+
+
+<button type="submit" class="btn">ثبت‌نام</button>
+<p class="form-note">* ثبت‌نام نمایشی است و داده‌ای ذخیره نمی‌شود.</p>
+</form>
+</main>
+
+
+<footer class="site-footer">
+<div class="container footer-inner">
+<p>© ۲۰۲۵ کامپیوتر هاب</p>
+</div>
+</footer>
+
+
+<script src="/assets/js/app.js"></script>
+</body>
+</html>
