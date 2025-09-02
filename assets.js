@@ -5,14 +5,42 @@ const themeToggle = document.getElementById('themeToggle');
 if (themeToggle) {
     themeToggle.addEventListener('click', () => {
         const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        let newTheme;
+        
+        // چرخش بین سه تم: روشن، تاریک، شب‌ستاره‌ای
+        if (currentTheme === 'light' || !currentTheme) {
+            newTheme = 'dark';
+        } else if (currentTheme === 'dark') {
+            newTheme = 'nightsky';
+        } else {
+            newTheme = 'light';
+        }
+        
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
+        
+        // تغییر آیکون دکمه
+        if (newTheme === 'nightsky') {
+            themeToggle.textContent = '🌌';
+        } else if (newTheme === 'dark') {
+            themeToggle.textContent = '🌙';
+        } else {
+            themeToggle.textContent = '🌓';
+        }
     });
     
     // بارگذاری تم ذخیره شده
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    // تنظیم آیکون مناسب
+    if (savedTheme === 'nightsky') {
+        themeToggle.textContent = '🌌';
+    } else if (savedTheme === 'dark') {
+        themeToggle.textContent = '🌙';
+    } else {
+        themeToggle.textContent = '🌓';
+    }
 }
 
 // ===== اسکرول به بالا =====
