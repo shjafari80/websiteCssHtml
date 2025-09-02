@@ -1,4 +1,20 @@
 // همه اسکریپت‌ها بعد از لود شدن DOM
+
+// ===== تغییر تم =====
+const themeToggle = document.getElementById('themeToggle');
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+    
+    // بارگذاری تم ذخیره شده
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+}
+
 // ===== اسکرول به بالا =====
 const backToTop = document.getElementById('backToTop');
 if (backToTop){
@@ -47,7 +63,7 @@ alert('ایمیل یا رمز عبور نامعتبر است');
 return;
 }
 // شبیه‌سازی موفقیت و انتقال به داشبورد
-window.location.href = '/dashboard/';
+window.location.href = 'dashboard.html';
 });
 }
 
@@ -64,7 +80,7 @@ alert('رمز عبور و تکرار آن یکسان نیست');
 return;
 }
 alert('ثبت‌نام با موفقیت انجام شد (نمایشی). اکنون وارد شوید.');
-window.location.href = '/account/login.html';
+window.location.href = 'login.html';
 });
 }
 
@@ -76,4 +92,3 @@ logoutLink.addEventListener('click', (e) => {
 // هیچ کاری برای حذف نشست نداریم؛ صرفاً برگرد به صفحه ورود
 });
 }
-});
